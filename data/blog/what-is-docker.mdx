@@ -1,0 +1,126 @@
+---
+title: Docker in 1 hour
+date: '2022-10-11'
+tags: ['docker', 'notes']
+draft: false,
+images: ["https://1000logos.net/wp-content/uploads/2021/11/Docker-Logo-2013.png", "/static/images/blogs/what-is-docker/architecture.png"] # The first element would be the cover image
+summary: 'So, I took this 1 hour course for docker. '
+---
+
+## What is Docker?
+If an application works in my development machine, it should work the same way on other machines too. An application working in development machine and not on other machines is a very common problem with deployment.
+
+The three common reasons of this problem are:
+1. One or more file of the application not being included as part of the deployment
+1. Software version mismatch
+1. Different configuration settings (example. like environment variables)
+
+Docker is a platform for building, running and shipping applications in a consistent manner across all machines. Docker helps us containerize our application with all its required dependencies and configurations. We'll look at containerization more deeply in the next section. The setup of an application is just around 5-10 mins with Docker.
+
+## Container vs Virtual machines
+A virtual machine is an abstraction of an actual machine (physical hardware). I can run multiple virtual machines in a single physical machine.
+
+For running a virtual machine, a full-blown OS is needed. A VM is also slow to start because it needs to start the OS. Virtual machines are resource intensive because it takes a slice of the physical hardware that it's running on. So, things like CPU, memory, etc... needs to be allocated to the VM. 
+
+A container, like a VM, is an isolated environment for running an application. Containers are generally light weight. Containers use the operating system of the host and because of that, they can start quickly. Containers, unlike virtual machines, don't take a slice of the physical hardware.
+
+## Docker architecture
+Docker is using a client-server architectures. They communicate using REST APIs. The server takes care of building and running containers. The server is called as the **Docker engine**.
+
+As we already know, all containers share the OS of the host. More specifically, All containers share the kernel of the operating system.
+
+Every operating system has it's own kernel and it's the reason why we can't run Windows containers on Linux because the application talks to the kernel of the Operating System behind the scenes. 
+
+Docker on mac run a light weight Linux virtual machine to run Linux containers. Please see the below image to see the support of containers.
+
+<Image alt="docker architecture" src="/static/images/blogs/what-is-docker/architecture.png" width={800} height={400} />
+
+## Installing Docker
+I first need to install Docker Desktop which allows me to containerize applications. I can easily download it by navigating to the [homepage](https://www.docker.com/) of the Docker website.
+
+## Workflow with Docker
+For an application to be packaged by Docker, it needs to have an additional file named `Dockerfile`. It contains all the instructions to package the application into something called a Docker image.
+
+An image contains everything for an application to run. It includes:
+1. A cut down OS
+1. A runtime environment like NodeJS or Python
+1. All application files
+1. Third party libraries
+1. Environment variables
+
+Once we have an image ready, we can use it to run a container. We can also push it to a public registry like DockerHub. Then that image can be used by any machine that runs docker in order to run the container of the image.
+
+DockerHub for Docker is basically what Github is for Git.
+
+## Docker in action
+
+Let's create a directory called `hello-docker`, within the folder, there should be a file called `app.js` with the below contents:
+```javascript
+console.log("Hello Docker!")
+```
+
+What we've just done now is that we created a very simple javascript project which prints "Hello Docker!" in the terminal.
+
+If you have NodeJS installed in your machine, then you can run the below command to execute the script:
+```console
+node app.js
+```
+
+We know the fact that if we want to package this application, we'll need to have an additional file in our application named `Dockerfile`. Let's write the file now:
+```Dockerfile
+# This line bases our image with node and the node image comes with linux. After the `:`, we are specifying the linux distro. Alpine is a lightweight linux disto
+FROM node:alpine
+
+# This line copies all the contents from the local directory into the file system of the image
+COPY . /app
+
+# This line sets the work directory of the project within the image
+WORKDIR /app
+
+# This line runs the necesarry command that is required for executing the project
+CMD node app.js
+```
+
+The command to package an application into an image is:
+```console
+docker build -t <image_name> <project_path>
+```
+
+The `-t` argument is actually not required but suggested because what it does is basically tags the project as _latest_. We can also assign the name of the tag but let's not go into that yet.
+
+project_path` is basically the location of the project that needs to be packaged into an image.
+
+To create an image, Let's run the below command from the root of our very simple JS application that we just developed:
+```console
+docker build -t hello-docker .
+```
+
+In order to see a list of images that, we need to write the below command:
+```console
+docker image ls
+
+REPOSITORY     TAG       IMAGE ID       CREATED             SIZE
+hello-docker   latest    9c6972af6f7b   About an hour ago   167MB
+```
+
+We can now run a container with the help of the image that we just created. Let's write the below command:
+```console
+docker run hello-docker
+```
+
+That's it!! We ran a container succesfully with the image just we created. 
+
+To see all the containers that are runing, we need to enter the below command:
+```console
+# ps means processes
+docker ps
+```
+
+After running this command, we may notice that it the output is empty. This is because the container has stopped running. In order to see even the cloased containers. We need to run:
+```
+docker ps -all
+
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS                      PORTS     NAMES
+284ab30841ac   hello-docker   "docker-entrypoint.s…"   13 minutes ago   Exited (0) 13 minutes ago             vigorous_raman
+
+```
