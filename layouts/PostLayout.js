@@ -28,7 +28,7 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
       />
       <ScrollTopAndComment />
       <article>
-        <div className="xl:divide-y xl xl:divide-gray-200 xl:dark:divide-gray-700">
+        <div className="xl xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
           <header className="pt-6 xl:pb-6">
             <div className="space-y-1">
               <dl className="space-y-10">
@@ -46,13 +46,9 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
               </div>
             </div>
           </header>
-          <div
-            className=""
-            style={{ gridTemplateRows: 'auto 1fr' }}
-          >
-            
+          <div className="" style={{ gridTemplateRows: 'auto 1fr' }}>
             <div className="pt-5 xl:col-span-3 xl:row-span-2 xl:pb-0">
-            {images && (<img src={images[0]} alt=""></img>)}
+              {images && <img src={images[0]} alt=""></img>}
               <div className="prose max-w-none pt-10 pb-8 dark:prose-dark">{children}</div>
               <div className="pt-6 pb-6 text-sm text-gray-700 dark:text-gray-300">
                 <Link href={discussUrl(slug)} rel="nofollow">
@@ -66,21 +62,21 @@ export default function PostLayout({ frontMatter, authorDetails, next, prev, chi
             <footer>
               <div className="divide-y divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700">
                 {
-                // tags && (
-                //   <div className="py-4 xl:py-8">
-                //     <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                //       Tags
-                //     </h2>
-                //     <div className="flex flex-wrap">
-                //       {tags.map((tag) => (
-                //         <Tag key={tag} text={tag} />
-                //       ))}
-                //     </div>
-                //   </div>
-                // )
+                  // tags && (
+                  //   <div className="py-4 xl:py-8">
+                  //     <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                  //       Tags
+                  //     </h2>
+                  //     <div className="flex flex-wrap">
+                  //       {tags.map((tag) => (
+                  //         <Tag key={tag} text={tag} />
+                  //       ))}
+                  //     </div>
+                  //   </div>
+                  // )
                 }
                 {(next || prev) && (
-                  <div className="flex justify-between items-center py-4">
+                  <div className="flex items-center justify-between py-4">
                     {prev && (
                       <div>
                         <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">

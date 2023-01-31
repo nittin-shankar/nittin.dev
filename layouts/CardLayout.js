@@ -18,7 +18,6 @@ export default function CardLayout({ posts, title, initialDisplayPosts = [], pag
 
   return (
     <>
-
       <div>
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
@@ -49,37 +48,48 @@ export default function CardLayout({ posts, title, initialDisplayPosts = [], pag
           </div>
         </div>
 
-        <div class="mx-auto mt-6 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
+        <div className="mx-auto mt-6 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
           {!filteredBlogPosts.length && 'No posts found'}
           {displayPosts.map((frontMatter) => {
             const { slug, date, title, summary, tags, images, readingTime } = frontMatter
             return (
-              <div class="flex flex-col overflow-hidden rounded-lg shadow-lg dark:shadow-gray-800 dark:shadow-sm">
-                <div class="flex-shrink-0">
-                <Link href={`/blog/${slug}`} class="mt-2 block">
-                  {images && 
-                    (<img class="h-48 w-full bg-primary-50 object-cover" src={images[0]} alt=""></img>)
-                  }
+              <div
+                key={slug}
+                className="flex flex-col overflow-hidden rounded-lg shadow-lg dark:shadow-sm dark:shadow-gray-800"
+              >
+                <div className="flex-shrink-0">
+                  <Link href={`/blog/${slug}`} class="mt-2 block">
+                    {images && (
+                      <img
+                        className="h-48 w-full bg-primary-50 object-cover"
+                        src={images[0]}
+                        alt=""
+                      ></img>
+                    )}
 
-                  {!images && 
-                    (<img class="h-48 w-full object-cover" src="https://www.slntechnologies.com/wp-content/uploads/2017/08/ef3-placeholder-image.jpg" alt=""></img>)
-                  }
+                    {!images && (
+                      <img
+                        className="h-48 w-full object-cover"
+                        src="https://www.slntechnologies.com/wp-content/uploads/2017/08/ef3-placeholder-image.jpg"
+                        alt=""
+                      ></img>
+                    )}
                   </Link>
                 </div>
-                <div class="flex flex-1 flex-col justify-between bg-white dark:bg-gray-800 p-6">
-                  <div class="flex justify-between space-x-1 text-sm text-gray-500">
-                    <time dateTime={date}>
-                      {formatDate(date)}
-                    </time>
+                <div className="flex flex-1 flex-col justify-between bg-white p-6 dark:bg-gray-800">
+                  <div className="flex justify-between space-x-1 text-sm text-gray-500">
+                    <time dateTime={date}>{formatDate(date)}</time>
                     <span>{readingTime.text}</span>
                   </div>
-                  <div class="flex-1">
+                  <div className="flex-1">
                     <Link href={`/blog/${slug}`} class="mt-2 block">
-                      <p class="text-xl font-semibold text-gray-900 dark:text-gray-100">{title}</p>
-                      <p class="mt-3 text-base text-gray-500">{summary}</p>
+                      <p className="text-xl font-semibold text-gray-900 dark:text-gray-100">
+                        {title}
+                      </p>
+                      <p className="mt-3 text-base text-gray-500">{summary}</p>
                     </Link>
                   </div>
-                  <div class="mt-6 flex items-center">
+                  <div className="mt-6 flex items-center">
                     <div className="flex flex-wrap">
                       {tags.map((tag) => (
                         <Tag key={tag} text={tag} />
@@ -89,9 +99,7 @@ export default function CardLayout({ posts, title, initialDisplayPosts = [], pag
                 </div>
               </div>
             )
-
           })}
-          
         </div>
       </div>
       {pagination && pagination.totalPages > 1 && !searchValue && (

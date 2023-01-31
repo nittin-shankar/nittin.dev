@@ -4,7 +4,7 @@ import kebabCase from '@/lib/utils/kebabCase'
 const Tag = ({ text }) => {
   return (
     <Link href={`/tags/${kebabCase(text)}`}>
-      <a className="mr-3 p-1 mt-1 text-xs uppercase bg-primary-50 text-primary-500 hover:text-primary-600 dark:text-white dark:bg-gray-700 dark:hover:text-primary-400 rounded">
+      <a className="mr-3 mt-1 rounded bg-primary-50 p-1 text-xs uppercase text-primary-500 hover:text-primary-600 dark:bg-gray-700 dark:text-white dark:hover:text-primary-400">
         {text.split(' ').join('-')}
       </a>
     </Link>
