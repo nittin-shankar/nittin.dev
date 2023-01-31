@@ -3,10 +3,11 @@ import siteMetadata from '@/data/siteMetadata'
 import CardLayout from '@/layouts/CardLayout'
 import { PageSEO } from '@/components/SEO'
 
-export const POSTS_PER_PAGE = 5
+export const POSTS_PER_PAGE = 9
 
 export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter('blog')
+
   const initialDisplayPosts = posts.slice(0, POSTS_PER_PAGE)
   const pagination = {
     currentPage: 1,

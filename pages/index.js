@@ -7,7 +7,7 @@ import formatDate from '@/lib/utils/formatDate'
 
 import NewsletterForm from '@/components/NewsletterForm'
 
-const MAX_DISPLAY = 5
+const MAX_DISPLAY = 3
 
 export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter('blog')
@@ -92,7 +92,7 @@ export default function Home({ posts }) {
         </div>
       )}
       {siteMetadata.newsletter.provider !== '' && (
-        <div className="flex items-center justify-center pt-4">
+        <div className="flex items-center justify-center pt-12">
           <NewsletterForm />
         </div>
       )}

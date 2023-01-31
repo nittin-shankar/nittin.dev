@@ -2,7 +2,7 @@ const siteMetadata = {
   title: 'Nittin\'s Personal Website',
   author: 'Nittin Shankar',
   headerTitle: 'nittin.dev',
-  description: 'Just a simple lad putting stuff on the internet',
+  description: 'I am just a simple lad writting my notes, achievments, thougts in the internet!!!',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
