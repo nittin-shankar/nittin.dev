@@ -1,76 +1,91 @@
 ---
-title:  "Implement dark theme using TailwindCSS"
+title: 'Implement dark theme using TailwindCSS'
 tags: [dark-mode, tailwind]
-images: ["/static/images/blogs/implement-dark-mode-in-tailwind/cover-image.png"] # First element of list is cover image
+images: ['/static/images/blogs/implement-dark-mode-in-tailwind/cover-image.png'] # First element of list is cover image
 draft: false
 summary: "In this article, we're going to see how easy it is to implement dark mode in TailwindCSS"
-date: '2022-10-11'
+date: '2023-03-21'
 ---
 
 I love the dark theme in all the websites. I hate to be blinded by the bright theme my screen displays. I recently learnt how to implement dark theme using TailwindCSS and it's very easy.
 
 ## Prequisites
+
 A good understanding of TailwindCSS is expected from the reader of the article. Basic Javascript is also expected.
 
 ## Enabling dark theme from the OS settings
+
 We're going to change the below page to support dark mode. The code for it is:
+
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
   <body>
     <div class="flex h-screen items-center bg-gray-200">
       <div class="mx-auto max-w-lg text-black">
         <h3 class="text-4xl">
-          The page is now in 
+          The page is now in
           <span class="inline underline">light mode</span>
         </h3>
       </div>
-    </div> 
+    </div>
   </body>
 </html>
 ```
 
 Tailwind has a dark modifier for implementing a dark theme in our websites. Let's now use it like below:
+
 ```html
 ...
 
 <div class="flex h-screen items-center bg-gray-200 dark:bg-black">
-  <div class="mx-auto max-w-lg text-black dark:text-white">
-
-... 
+  <div class="mx-auto max-w-lg text-black dark:text-white">...</div>
+</div>
 ```
 
 In our context, when the dark mode is enabled, the background will be black and the text will be white. When the dark mode is not enabled, the background will be white and the text will be black. Tailwind actually uses `prefers-color-scheme` media feature from CSS which looks at the system setting the user had made. If you have enabled the dark mode in your OS, then you should see the dark mode of our page looks like below.
 
-<Image alt="dark mode enabled" src="/static/images/blogs/implement-dark-mode-in-tailwind/1.png" width={721} height={511} />
+<Image
+  alt="dark mode enabled"
+  src="/static/images/blogs/implement-dark-mode-in-tailwind/1.png"
+  width={721}
+  height={511}
+/>
 
 The text says the page is in "light mode" despite being in dark mode. Let's fix that:
 
 ```html
 ...
 <h3 class="text-4xl">
-  The page is now in 
-  <span class="inline dark:hidden underline">light mode</span>
-  <span class="hidden dark:inline underline">dark mode</span>
+  The page is now in
+  <span class="inline underline dark:hidden">light mode</span>
+  <span class="hidden underline dark:inline">dark mode</span>
 </h3>
 ...
 ```
+
 Great it's now showing the correct text!
 
-<Image alt="dark mode text fix" src="/static/images/blogs/implement-dark-mode-in-tailwind/1.png" width={721} height={511} />
+<Image
+  alt="dark mode text fix"
+  src="/static/images/blogs/implement-dark-mode-in-tailwind/1.png"
+  width={721}
+  height={511}
+/>
 
 This is how easy it is to enable dark mode to your websites. But, currently we're not able to switch manually between dark and light mode. Let's work on that in the next section.
 
 ## Switching manually between light and dark mode
 
 In our `tailwind.config.js`, we should add the following line:
+
 ```js
-... 
+...
 module.exports = {
   darkMode: 'class'
   ...
@@ -78,30 +93,38 @@ module.exports = {
 ```
 
 Now, even if we have dark mode enabled in our OS settings, the website won't be in the dark mode. The dark mode of the page will only be enabled if the `html` tag has the class `dark`. You can try adding the class and the dark mode will be enabled.
+
 ```html
 <html class="dark">
-...
+  ...
+</html>
 ```
 
 Great, we can see that the page is displayed in the dark mode.
-<Image alt="dark mode enabled" src="/static/images/blogs/implement-dark-mode-in-tailwind/1.png" width={721} height={511} />
 
-
+<Image
+  alt="dark mode enabled"
+  src="/static/images/blogs/implement-dark-mode-in-tailwind/1.png"
+  width={721}
+  height={511}
+/>
 
 Let's now write a function to change the modes dynamically in a javascript file called `support-dark-mode.js`.
+
 ```js
 function changeMode() {
-  let darkModeEnabled = document.documentElement.classList.contains("dark")
+  let darkModeEnabled = document.documentElement.classList.contains('dark')
 
   if (darkModeEnabled) {
-    document.documentElement.classList.remove("dark")
+    document.documentElement.classList.remove('dark')
   } else {
-    document.documentElement.classList.add("dark")
+    document.documentElement.classList.add('dark')
   }
 }
 ```
 
 Let's now import the javascript file and add an onclick function call to `changeMode` that we just wrote.
+
 ```html
 ...
   <div onclick="onclick()" class="flex h-screen items-center bg-gray-200 dark:bg-black">
@@ -112,40 +135,50 @@ Let's now import the javascript file and add an onclick function call to `change
 ```
 
 Aditionally, let's add a small `p` tag below `h3` to let user know to click anywhere on the screen.
+
 ```html
 <p class="mt-12 text-center">Click anywhere to change mode</p>
 ```
 
 We can now manually change from light mode to dark mode. Hooray 👏👏👏
 
-<Image alt="dark mode enabled" src="/static/images/blogs/implement-dark-mode-in-tailwind/full-demo.gif" width={800} height={411} />
+<Image
+  alt="dark mode enabled"
+  src="/static/images/blogs/implement-dark-mode-in-tailwind/full-demo.gif"
+  width={800}
+  height={411}
+/>
 
 One big limitation with this approach is that it doesn't take the OS setting into consideration. Another limitation is that we are not storing the user's preference for showing the preferred theme next time around. Let's combine both supporting system preference and manual selection in the next section.
 
 ## Supporting system preference and manual selection
 
 We're going to use [localStorage](https://www.w3schools.com/jsref/prop_win_localstorage.asp) to store the user preference in browser. To see the OS setting preference, we're going to use [matchMedia](https://www.w3schools.com/jsref/met_win_matchmedia.asp). Let's rewrite our `support-dark-mode.js` now:
+
 ```js
 // Looks at localStorage or OS setting to enable dark mode
-if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+if (
+  localStorage.theme === 'dark' ||
+  (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+) {
   document.documentElement.classList.add('dark')
 } else {
   document.documentElement.classList.remove('dark')
 }
 
 function changeMode() {
-  let darkModeEnabled = document.documentElement.classList.contains("dark")
+  let darkModeEnabled = document.documentElement.classList.contains('dark')
 
   if (darkModeEnabled) {
-    document.documentElement.classList.remove("dark")
+    document.documentElement.classList.remove('dark')
     localStorage.theme = 'light' // Stores in localStorage that user chose light mode
   } else {
-    document.documentElement.classList.add("dark")
+    document.documentElement.classList.add('dark')
     localStorage.theme = 'dark' // Stores in localStorage that user chose dark mode
-  } 
+  }
 }
 ```
 
 Now our page has the best of both worlds. It automatically detects the preferred theme of the user and if not OS!!! You can see the full code written with TailwindCSS Play CDN in this [link](https://github.com/nittin-shankar/dark-mode-example)
 
-I hope you find this article useful and learnt something. Please feel free to share feedback with me on the comments! 
+I hope you find this article useful and learnt something. Please feel free to share feedback with me on the comments!
