@@ -4,9 +4,9 @@ const siteMetadata = {
   headerTitle: 'nittin.dev',
   description: 'I am just a simple lad writting my notes, achievments, thougts in the internet!!!',
   language: 'en-us',
-  theme: 'system', // system, dark or light
+  theme: 'dark', // system, dark or light
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
-  siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
+  siteRepo: 'https://github.com/nittin-shankar/nittin.dev',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/nittin.jpeg',
   socialBanner: '/static/images/twitter-card.png',
@@ -51,7 +51,7 @@ const siteMetadata = {
       metadata: '0',
       // theme example: light, dark, dark_dimmed, dark_high_contrast
       // transparent_dark, preferred_color_scheme, custom
-      theme: 'preferred_color_scheme',
+      theme: 'light',
       // Place the comment box above the comments. options: bottom, top
       inputPosition: 'bottom',
       // Choose the language giscus will be displayed in. options: en, es, zh-CN, zh-TW, ko, ja etc
