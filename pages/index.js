@@ -23,28 +23,36 @@ export default function Home({ posts }) {
       <div className="">
         <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
           <div className="flex flex-col items-center pt-8">
-            <Image src='/static/images/nittin.jpeg' alt="avatar" width="756px" height="1008px" />
+            <Image src="/static/images/nittin.jpeg" alt="avatar" width="756px" height="1008px" />
           </div>
-          <div class="pt-8 xl:col-span-2">
-            <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-4xl md:leading-14 pb-4">
-              Hey guys, I'm <span class="underline">Nittin Shankar</span> 👋
+          <div className="pt-8 xl:col-span-2">
+            <h1 className="pb-4 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-4xl md:leading-14">
+              Hey guys, I'm <span className="underline">Nittin Shankar</span> 👋
             </h1>
-            <div className="text-base text-gray-500 dark:text-gray-400 max-w-none">
-              and I'm 19 years old now. I live in an experimental city of dawn called Auroville. If you are interested in Auroville, you can read more about it <Link className="pt-8 text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"href={'https://auroville.org/'}>here</Link>. I'm working with an amazing software development team here in Auroville called Talam.
-
-              <br></br><br></br>
-              
+            <div className="max-w-none text-base text-gray-500 dark:text-gray-400">
+              and I'm 19 years old now. I live in an experimental city of dawn called Auroville. If
+              you are interested in Auroville, you can read more about it{' '}
+              <Link
+                className="pt-8 text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                href={'https://auroville.org/'}
+              >
+                here
+              </Link>
+              . I'm working with an amazing software development team here in Auroville called
+              Talam.
+              <br></br>
+              <br></br>
               I'm also studying BSc Computer Science remotely from Goldsmiths, University of London.
-
-              <br></br><br></br>
-
-              I specialise in creating web applications with the PETAL stack. Other than web development, I'm very much interested in entrepreneurship and hope to be a founder/co-founder very soon. 
-
-              <br></br><br></br>
-              As a human, I aim to be a beautiful person serving everything with an abundance of love, joy and kindness. 
-
-              <br></br><br></br>
-
+              <br></br>
+              <br></br>I specialise in creating web applications with the PETAL stack. Other than
+              web development, I'm very much interested in entrepreneurship and hope to be a
+              founder/co-founder very soon.
+              <br></br>
+              <br></br>
+              As a human, I aim to be a beautiful person serving everything with an abundance of
+              love, joy and kindness.
+              <br></br>
+              <br></br>
               On this website, I post my notes, guides, opinions from whatever I study.
             </div>
           </div>
@@ -52,8 +60,8 @@ export default function Home({ posts }) {
       </div>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="space-y-2 md:space-y-5">
-          <div className="flex justify-between items-center">
-            <h2 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-4xl md:leading-14 pt-8">
+          <div className="flex items-center justify-between">
+            <h2 className="pt-8 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-4xl md:leading-14">
               Check out the latest blogs
             </h2>
 
@@ -68,11 +76,11 @@ export default function Home({ posts }) {
             )}
           </div>
         </div>
-        <div className="mx-auto pt-6 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
+        <div className="mx-auto grid max-w-lg gap-5 pt-6 lg:max-w-none lg:grid-cols-3">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
             const { slug, date, title, summary, tags, images, readingTime } = frontMatter
-            
+
             return (
               <div
                 key={slug}
