@@ -4,7 +4,7 @@ const siteMetadata = {
   headerTitle: 'nittin.dev',
   description: 'I am just a simple lad writting my notes, achievments, thougts in the internet!!!',
   language: 'en-us',
-  theme: 'dark', // system, dark or light
+  theme: 'system', // system, dark or light
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
   siteRepo: 'https://github.com/nittin-shankar/nittin.dev',
   siteLogo: '/static/images/logo.png',

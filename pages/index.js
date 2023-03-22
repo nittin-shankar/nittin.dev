@@ -87,7 +87,7 @@ export default function Home({ posts }) {
                 className="flex flex-col overflow-hidden rounded-lg shadow-lg dark:shadow-sm dark:shadow-gray-800"
               >
                 <div className="flex-shrink-0">
-                  <Link href={`/blog/${slug}`} class="mt-2 block">
+                  <Link href={`/blog/${slug}`} className="mt-2 block">
                     {images && (
                       <img
                         className="h-48 w-full bg-primary-50 object-cover"
