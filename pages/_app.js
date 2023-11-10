@@ -16,7 +16,7 @@ const isDevelopment = process.env.NODE_ENV === 'development'
 const isSocket = process.env.SOCKET
 
 export default function App({ Component, pageProps }) {
-  return (
+  let defaultTemplate = (
     <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
       <Head>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -28,4 +28,22 @@ export default function App({ Component, pageProps }) {
       </LayoutWrapper>
     </ThemeProvider>
   )
+
+  let diyTemplate = (
+    <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
+      <Head>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+      </Head>
+      {isDevelopment && isSocket && <ClientReload />}
+      <Analytics />
+
+      <Component {...pageProps} />
+    </ThemeProvider>
+  )
+
+  if (pageProps.isDIYPage != undefined && pageProps.isDIYPage) {
+    return diyTemplate
+  }
+
+  return defaultTemplate
 }
