@@ -17,7 +17,10 @@ export default function Podcasts(_) {
           className="object-fill"
         />
       </div>
-      <div className="my-4">
+      <p className="mx-auto mt-2 w-3/4 text-center text-gray-700 dark:text-gray-300">
+        A Tamil bi-weekly podcast of interviews of people from the tech industry!
+      </p>
+      <div className="mt-7">
         <a
           href="https://open.spotify.com/show/0lbVbO96JVC3olNcQ4F7Ib"
           className="flex-inline mx-auto flex w-72 items-center justify-center gap-2 rounded border-2 py-2 text-sm uppercase dark:border dark:border-gray-500 dark:text-white"
@@ -63,7 +66,7 @@ export default function Podcasts(_) {
 
         <Link
           href={'/'}
-          className="my-5 block text-center text-sm underline hover:no-underline dark:text-white"
+          className="my-3 block text-center text-sm text-gray-700 underline hover:no-underline dark:text-gray-300"
         >
           read my personal blog instead
         </Link>
