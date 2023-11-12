@@ -25,7 +25,7 @@ export default function Home({ posts }) {
           <div className="flex flex-col items-center pt-8">
             <Image src="/static/images/nittin.jpeg" alt="avatar" width="756px" height="1008px" />
           </div>
-          <div className="pt-8 xl:col-span-2">
+          <div className="pt-4 xl:col-span-2">
             <h1 className="pb-4 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-4xl md:leading-14">
               Hey guys, I'm <span className="underline">Nittin Shankar</span> 👋
             </h1>
@@ -38,22 +38,31 @@ export default function Home({ posts }) {
               >
                 here
               </Link>
-              . I'm working with an amazing software development team here in Auroville called
-              Talam.
-              <br></br>
-              <br></br>
-              I'm also studying BSc Computer Science remotely from Goldsmiths, University of London.
+              . I'm a passionate web developer working with an amazing software development team
+              here in Auroville called Talam. Additonally, I'm studying BSc Computer Science
+              remotely from Goldsmiths, University of London.
               <br></br>
               <br></br>I specialise in creating web applications with the PETAL stack. Other than
               web development, I'm very much interested in entrepreneurship and hope to be a
               founder/co-founder very soon.
               <br></br>
+              <br></br>I also run a bi-weekly Tamil podcast where I interview techies to learn from
+              their journey, experiences and stories. Start listening to them{' '}
+              <Link
+                className="pt-8 text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                href={'/podcast'}
+              >
+                now
+              </Link>
+              .<br></br>
               <br></br>
               As a human, I aim to be a beautiful person serving everything with an abundance of
               love, joy and kindness.
               <br></br>
               <br></br>
-              On this website, I post my notes, guides, opinions from whatever I study.
+              On this website, I post my notes, guides, opinions from whatever I study. On a
+              personal level, I also post my stories, experiences and achievements in this blog.
+              Happy reading!
             </div>
           </div>
         </div>

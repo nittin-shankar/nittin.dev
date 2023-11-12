@@ -1,27 +1,29 @@
 const siteMetadata = {
-  title: "Nittin's Personal Website",
+  title: 'Nittin Shankar - Podcaster, Passionate Web-Developer @ Talam, CS Major @ UoL',
   author: 'Nittin Shankar',
   headerTitle: 'nittin.dev',
-  description: 'I am just a simple lad writting my notes, achievments, thougts in the internet!!!',
+  description:
+    'I post my notes, guides, opinions from whatever I study. On a personal level, I also post my stories, experiences and achievements in this blog. Happy reading!',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
+  siteUrl: 'https://nittin.dev',
   siteRepo: 'https://github.com/nittin-shankar/nittin.dev',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/nittin.jpeg',
   socialBanner: '/static/images/twitter-card.png',
   email: 'nittin@auroville.org.in',
   github: 'https://github.com/nittin-shankar',
-  twitter: 'https://twitter.com/Imnittin10',
+  linkedin: 'https://www.linkedin.com/',
+  twitter: 'https://twitter.com/nittin_shankar',
+  instagram: 'https://www.instagram.com/nittin.shankar/',
   // facebook: 'https://facebook.com',
   // youtube: 'https://youtube.com',
-  linkedin: 'https://www.linkedin.com/',
   locale: 'en-US',
   analytics: {
     // If you want to use an analytics provider you have to add it to the
     // content security policy in the `next.config.js` file.
     // supports plausible, simpleAnalytics, umami or googleAnalytics
-    plausibleDataDomain: '', // e.g. tailwind-nextjs-starter-blog.vercel.app
+    plausibleDataDomain: 'nittin.dev', // e.g. tailwind-nextjs-starter-blog.vercel.app
     simpleAnalytics: false, // true or false
     umamiWebsiteId: '', // e.g. 123e4567-e89b-12d3-a456-426614174000
     googleAnalyticsId: '', // e.g. UA-000000-2 or G-XXXXXXX
