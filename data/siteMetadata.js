@@ -1,5 +1,5 @@
 const siteMetadata = {
-  title: 'Nittin Shankar - Young adult aged 19, passionate web-developer @ Talam, CS major @ UoL',
+  title: 'Nittin Shankar - Podcaster, Passionate Web-Developer @ Talam, CS Major @ UoL',
   author: 'Nittin Shankar',
   headerTitle: 'nittin.dev',
   description:
