@@ -49,11 +49,11 @@ export default function App({ Component, pageProps }) {
         <meta property="og:url" content={`${siteMetadata.siteUrl}/podcast`} />
         <meta
           property="og:image"
-          content={`${siteMetadata.siteUrl}/static/images/podcast_og_image.png`}
+          content={`${siteMetadata.siteUrl}/static/images/podcast-preview-card.png`}
         />
         <meta
           property="og:image:url"
-          content={`${siteMetadata.siteUrl}/static/images/podcast_og_image.png`}
+          content={`${siteMetadata.siteUrl}/static/images/podcast-preview-card.png`}
         />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="1200" />
@@ -72,7 +72,7 @@ export default function App({ Component, pageProps }) {
         />
         <meta
           name="twitter:image"
-          content={`${siteMetadata.siteUrl}/static/images/podcast_og_image.png`}
+          content={`${siteMetadata.siteUrl}/static/images/podcast-preview-card.png`}
         />
       </Head>
       {isDevelopment && isSocket && <ClientReload />}
