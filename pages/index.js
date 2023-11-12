@@ -38,8 +38,8 @@ export default function Home({ posts }) {
               >
                 here
               </Link>
-              . I'm working with an amazing software development team here in Auroville called
-              Talam.
+              . I'm a passionate web developer working with an amazing software development team
+              here in Auroville called Talam.
               <br></br>
               <br></br>
               I'm also studying BSc Computer Science remotely from Goldsmiths, University of London.
@@ -53,7 +53,9 @@ export default function Home({ posts }) {
               love, joy and kindness.
               <br></br>
               <br></br>
-              On this website, I post my notes, guides, opinions from whatever I study.
+              On this website, I post my notes, guides, opinions from whatever I study. On a
+              personal level, I also post my stories, experiences and achievements in this blog.
+              Happy reading!
             </div>
           </div>
         </div>
