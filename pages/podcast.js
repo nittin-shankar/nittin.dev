@@ -2,7 +2,7 @@ import Image from '@/components/Image'
 import Link from '@/components/Link'
 
 export async function getStaticProps() {
-  return { props: { isDIYPage: true } }
+  return { props: { isPodcastPage: true } }
 }
 
 export default function Podcasts(_) {

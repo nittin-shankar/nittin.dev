@@ -29,7 +29,7 @@ export default function App({ Component, pageProps }) {
     </ThemeProvider>
   )
 
-  let diyTemplate = (
+  let podcastTemplate = (
     <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
       <Head>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -41,8 +41,8 @@ export default function App({ Component, pageProps }) {
     </ThemeProvider>
   )
 
-  if (pageProps.isDIYPage != undefined && pageProps.isDIYPage) {
-    return diyTemplate
+  if (pageProps.isPodcastPage != undefined && pageProps.isPodcastPage) {
+    return podcastTemplate
   }
 
   return defaultTemplate
