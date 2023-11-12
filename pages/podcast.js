@@ -52,8 +52,21 @@ export default function Podcasts(_) {
         </a>
 
         <a
+          href="https://podcasts.apple.com/us/podcast/vaanga-pazhagalaam-with-techies/id1715171723"
+          className="flex-inline my-2 mx-auto hidden w-72 items-center justify-center rounded border border border-gray-500 py-2.5 dark:flex"
+        >
+          <Image
+            alt="listen on apple podcasts badge"
+            src="/static/images/listen-on-apple-podcast-dark.svg"
+            width={149.1}
+            height={26.76}
+            className=""
+          />
+        </a>
+
+        <a
           href="https://instagram.com/nittin.shankar"
-          className="flex-inline mx-auto flex w-72 items-center justify-center gap-2 rounded border py-2 text-xs uppercase dark:border dark:border-gray-500 dark:text-white"
+          className="flex-inline mx-auto flex w-72 items-center justify-center gap-2 rounded border py-2 text-xs uppercase dark:border-[0.3px] dark:border-gray-500 dark:text-gray-300"
         >
           <Image
             alt="instagram logo"
@@ -66,19 +79,6 @@ export default function Podcasts(_) {
             <div className="m-0 p-0 text-[0.6rem]">Follow me on</div>
             <div className="font-semibold">Instagram</div>
           </div>
-        </a>
-
-        <a
-          href="https://podcasts.apple.com/us/podcast/vaanga-pazhagalaam-with-techies/id1715171723"
-          className="flex-inline my-2 mx-auto hidden w-72 items-center justify-center rounded border border border-gray-500 py-2.5 dark:flex"
-        >
-          <Image
-            alt="listen on apple podcasts badge"
-            src="/static/images/listen-on-apple-podcast-dark.svg"
-            width={149.1}
-            height={26.76}
-            className=""
-          />
         </a>
 
         <Link
