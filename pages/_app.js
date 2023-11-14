@@ -74,6 +74,11 @@ export default function App({ Component, pageProps }) {
           name="twitter:image"
           content={`${siteMetadata.siteUrl}/static/images/podcast-preview-card.png`}
         />
+        <script
+          defer
+          data-domain="nittin.dev"
+          src="https://plausible.auroville.org.in/js/plausible.js"
+        ></script>
       </Head>
       {isDevelopment && isSocket && <ClientReload />}
       <Analytics />
