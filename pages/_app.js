@@ -87,8 +87,65 @@ export default function App({ Component, pageProps }) {
     </ThemeProvider>
   )
 
+  let meetupTemplate = (
+    <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
+      <Head>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <title>Passionate Techies Meetup - PY & AV</title>
+        <meta
+          httpEquiv="Refresh"
+          content="0; URL=https://kommunity.com/passionate-techies-meetup-group-py-av/events/meetup-1-b03bc360"
+        />
+        <meta property="og:title" content="Passionate Techies Meetup - PY & AV" />
+        <meta property="og:site_name" content="Passionate Techies Meetup - PY & AV" />
+        <meta
+          property="og:description"
+          content="Register now for the upcoming local tech community meetup on Jan 20 from 3:00 - 4:30 PM"
+        />
+        <meta property="og:url" content={`${siteMetadata.siteUrl}/meetup`} />
+        <meta
+          property="og:image"
+          content={`${siteMetadata.siteUrl}/static/images/meetup-preview-card.png`}
+        />
+        <meta
+          property="og:image:url"
+          content={`${siteMetadata.siteUrl}/static/images/meetup-preview-card.png`}
+        />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="1200" />
+        <meta property="og:type" content="website" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content={siteMetadata.twitter} />
+        <meta name="twitter:title" content="Passionate Techies Meetup - PY & AV" />
+        <meta
+          name="twitter:description"
+          content="Register now for the upcoming local tech community meetup on Jan 20 from 3:00 - 4:30 PM"
+        />
+        <meta
+          name="twitter:image"
+          content={`${siteMetadata.siteUrl}/static/images/meetup-preview-card.png`}
+        />
+        <script
+          defer
+          data-domain="nittin.dev"
+          src="https://plausible.auroville.org.in/js/plausible.js"
+        ></script>
+      </Head>
+      {isDevelopment && isSocket && <ClientReload />}
+      <Analytics />
+
+      <Component {...pageProps} />
+    </ThemeProvider>
+  )
+
   if (pageProps.isPodcastPage != undefined && pageProps.isPodcastPage) {
     return podcastTemplate
+  }
+
+  if (pageProps.isMeetupPage != undefined && pageProps.isMeetupPage) {
+    return meetupTemplate
   }
 
   return defaultTemplate
