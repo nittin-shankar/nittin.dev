@@ -92,10 +92,6 @@ export default function App({ Component, pageProps }) {
       <Head>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <title>Passionate Techies Meetup - PY & AV</title>
-        <meta
-          httpEquiv="Refresh"
-          content="0; URL=https://kommunity.com/passionate-techies-meetup-group-py-av/events/meetup-1-b03bc360"
-        />
         <meta property="og:title" content="Passionate Techies Meetup - PY & AV" />
         <meta property="og:site_name" content="Passionate Techies Meetup - PY & AV" />
         <meta
