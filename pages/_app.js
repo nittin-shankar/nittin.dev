@@ -100,7 +100,7 @@ export default function App({ Component, pageProps }) {
         <meta property="og:site_name" content="Passionate Techies Meetup - PY & AV" />
         <meta
           property="og:description"
-          content="Register now for the upcoming local tech community meetup on Jan 20 from 3:00 - 4:30 PM"
+          content="Register now for the upcoming local tech community meetup on Feb 3 from 3:00 - 5:00 PM"
         />
         <meta property="og:url" content={`${siteMetadata.siteUrl}/meetup`} />
         <meta
