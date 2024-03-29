@@ -94,7 +94,7 @@ export default function App({ Component, pageProps }) {
         <title>Passionate Techies Meetup - PY & AV</title>
         <meta
           httpEquiv="Refresh"
-          content="0; URL=https://kommunity.com/passionate-techies-meetup-group-py-av/events/passionate-techies-meetup-py-av-f25bc13c"
+          content="0; URL=https://kommunity.com/passionate-techies-meetup-group-py-av/events/passionate-techies-meetup-py-av-53749957"
         />
         <meta property="og:title" content="Passionate Techies Meetup - PY & AV" />
         <meta property="og:site_name" content="Passionate Techies Meetup - PY & AV" />
