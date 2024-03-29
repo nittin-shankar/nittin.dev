@@ -13,7 +13,7 @@ export default function Meetup(_) {
         <Link
           className="pt-8 text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
           href={
-            'https://kommunity.com/passionate-techies-meetup-group-py-av/events/passionate-techies-meetup-py-av-f25bc13c'
+            'https://kommunity.com/passionate-techies-meetup-group-py-av/events/passionate-techies-meetup-py-av-53749957'
           }
         >
           {' '}
