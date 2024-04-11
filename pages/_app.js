@@ -94,13 +94,13 @@ export default function App({ Component, pageProps }) {
         <title>Passionate Techies Meetup - PY & AV</title>
         <meta
           httpEquiv="Refresh"
-          content="0; URL=https://kommunity.com/passionate-techies-meetup-group-py-av/events/passionate-techies-meetup-py-av-53749957"
+          content="0; URL=https://kommunity.com/passionate-techies-meetup-group-py-av/events/passionate-techies-meetup-py-av-d055b9af"
         />
         <meta property="og:title" content="Passionate Techies Meetup - PY & AV" />
         <meta property="og:site_name" content="Passionate Techies Meetup - PY & AV" />
         <meta
           property="og:description"
-          content="Register now for the upcoming local tech community meetup on Mar 30 from 3:30 - 5:00 PM"
+          content="Register now for the upcoming local tech community meetup on Apr 13 from 3:30 - 5:00 PM"
         />
         <meta property="og:url" content={`${siteMetadata.siteUrl}/meetup`} />
         <meta
@@ -121,7 +121,7 @@ export default function App({ Component, pageProps }) {
         <meta name="twitter:title" content="Passionate Techies Meetup - PY & AV" />
         <meta
           name="twitter:description"
-          content="Register now for the upcoming local tech community meetup on Mar 30 from 3:00 - 5:00 PM"
+          content="Register now for the upcoming local tech community meetup on Apr 13 from 3:00 - 5:00 PM"
         />
         <meta
           name="twitter:image"
