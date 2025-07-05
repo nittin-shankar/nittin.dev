@@ -98,6 +98,15 @@ module.exports = {
               color: theme('colors.gray.900'),
               borderLeftColor: theme('colors.gray.200'),
             },
+            'blockquote p': {
+              marginTop: 0,
+              marginBottom: 0,
+            },
+            'blocquote footer': {
+              marginTop: '0.5em',
+            },
+            'blockquote p:first-of-type::before': { content: 'none' },
+            'blockquote p:last-of-type::after': { content: 'none' },
           },
         },
         dark: {
