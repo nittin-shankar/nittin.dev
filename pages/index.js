@@ -30,8 +30,8 @@ export default function Home({ posts }) {
               Hey guys, I'm <span className="underline">Nittin Shankar</span> 👋
             </h1>
             <div className="max-w-none text-base text-gray-500 dark:text-gray-400">
-              and I'm 19 years old now. I live in an experimental city of dawn called Auroville. If
-              you are interested in Auroville, you can read more about it{' '}
+              and I live in an experimental city of dawn called Auroville. If you are interested in
+              Auroville, you can read more about it{' '}
               <Link
                 className="pt-8 text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                 href={'https://auroville.org/'}
@@ -39,8 +39,7 @@ export default function Home({ posts }) {
                 here
               </Link>
               . I'm a passionate web developer working with an amazing software development team
-              here in Auroville called Talam. Additonally, I'm studying BSc Computer Science
-              remotely from Goldsmiths, University of London.
+              here in Auroville called Talam.
               <br></br>
               <br></br>I specialise in creating web applications with the PETAL stack. Other than
               web development, I'm very much interested in entrepreneurship and hope to be a
